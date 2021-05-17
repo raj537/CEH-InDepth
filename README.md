@@ -36,4 +36,8 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 #### WHY WE NEED TO SCAN FOR LIVE SYSTEMS?
 ##### It's required for other port scan like idle scan where we need to spoof a ip or Bypassing Firewall..
 ----------------------------------------------------------------------
-####
+#### UNDERSTANDING ICMP PINGSWEEP: The Traditional Way of Determining Live Systems
+##### Before Jumping straight into PingSweep technique lets have a brief look about ICMP Protocol
+#### What is ICMP?
+##### ICMP is a network protocol used for error handling in the the network layer(Layer 3 of TCP/IP Stack)..
+
