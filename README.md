@@ -41,3 +41,9 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 #### What is ICMP?
 ##### ICMP is a network protocol used for error handling in the the network layer(Layer 3 of TCP/IP Stack)..
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/ICMPposition2.jpg)
+------------------------------------------------------------------------
+#### WHY WE NEED ICMP IF IP IS ALREADY PRESENT IN THE NETWORK LAYER?
+##### The Internet Control Message Protocol (ICMP) is a network layer protocol used by network devices to diagnose network communication issues, ICMP espicially provides messages for diagonastic information . These features cannot be           provided by IP , IP provides features like data fragmentation , routing 
+--------------------------------------------------------------------------------
+#### Understanding Messages Format 
+
