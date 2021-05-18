@@ -103,3 +103,12 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 ##### -sP: tells nmap no to do a port scan after host discovery.So After the Scan Nmap will only provide whether the host is up or down.
 ##### Nmap Scan Result
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/nmapPinSweep.png)
+----------------------------------------------------------------
+#### PingSweep via One liner scapy( Python's packet manipulation ).
+------------------------------
+#### If you want to take a look on scapy and its functions and features do check this --> [Scapy Documentation ](https://scapy.readthedocs.io/en/latest/)
+```python 
+   from scapy.all import *
+   a = srloop(IP(dst="192.168.1.0/24")/ICMP(),timeout=5)
+```
+
