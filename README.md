@@ -90,3 +90,9 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 #### Echo Request and Echo Reply(Type 8 code 0)
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/ICMPEcho.png)
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/ICMPReply.png)
+----------------------------------------------------
+### NOW LETS JUMP TO PINGSWEEP TECHNIQUE.
+--------------------------------------------------
+#### What is PingSweep ?
+##### PingSweep is a scanning technique in which ICMP echo requests are send to a range of hosts and if the hosts send back echo-reply then those hosts are considered as live.(After gaining live hosts information we can proceed with port scanning).
+------------------------------------------------------------------
