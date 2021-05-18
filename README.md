@@ -40,4 +40,4 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 ##### Before Jumping straight into PingSweep technique lets have a brief look about ICMP Protocol
 #### What is ICMP?
 ##### ICMP is a network protocol used for error handling in the the network layer(Layer 3 of TCP/IP Stack)..
-![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/ICMPposition.jpg)
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/ICMPposition2.jpg)
