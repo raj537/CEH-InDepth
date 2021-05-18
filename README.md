@@ -70,7 +70,10 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 #### > Time Exceeded: Gateway notifies the source that the time-to-live field in the datagram is zero via time exceeded message.
 -------------------------------------------------------------------------------
 #### These Errors Can be Understood Well by Real Examples.(Providing Some Errors)
-#### Destination Unreachable
+#### Destination Unreachable (PingSweep Capture)
 -----------------------------------
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/ICMPERROR.png)
-
+---------------------------------------
+#### Redirection (Wireshark Capture)
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/ICMPRedirection.png)
+------------------------------------------
