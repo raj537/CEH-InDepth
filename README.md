@@ -45,12 +45,14 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 #### WHY WE NEED ICMP IF IP IS ALREADY PRESENT IN THE NETWORK LAYER?
 ##### The Internet Control Message Protocol (ICMP) is a network layer protocol used by network devices to diagnose network communication issues, ICMP espicially provides messages for diagonastic information . These features cannot be           provided by IP , IP provides features like data fragmentation , routing 
 --------------------------------------------------------------------------------
-#### Understanding Messages Format 
+#### UNDERSTANDING MESSAGE FORMAT 
 ![Markdown Logo](https://lh3.googleusercontent.com/proxy/n0JNIv5_WZKziPl4IC24peBxQq9iQgpciJjXqXVy7dxgUWUR3JfgElR8TCX2zl0CkT0FQj8nvOGiOlmFlC97KByryBhieidWPwduXNY6)
-####
+
       * Type : Contains the message type. (8 bits). It gives Information of the Message (For Example: Type 3 , 11 , 8 ,12 ,etc..)
       ------------------------------------------------------------------------------------------
       * Code : Contains the sub-type of the ICMP request.(8 bits). Both Type and Code are interpreted together to get useful information (For Example: Type 3  with code               0,2,1,3,4,5).
       ------------------------------------------------------------------------------------------
       * Checksum : It is a 16 bit field to detect error exists in the message or not.
 -----------------------------------------------------------------------------------
+#### UNDERSTANDING TYPES OF MESSAGES AND CODES
+
