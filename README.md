@@ -69,7 +69,7 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 ----------------------------------------------------------------------------
 #### > Time Exceeded: Gateway notifies the source that the time-to-live field in the datagram is zero via time exceeded message.
 -------------------------------------------------------------------------------
-#### These Errors Can be Understood Well by Real Examples.(Providing Some Errors)
+#### Providing Some Error Captures
 #### Destination Unreachable (PingSweep Capture)
 -----------------------------------
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/ICMPERROR.png)
@@ -77,3 +77,11 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 #### Redirection (Wireshark Capture)
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/ICMPRedirection.png)
 ------------------------------------------
+#### Query Messages
+--------------------------------
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/ICMPECHOREPLY.png)
+#### > Echo request and Echo Reply: Test for liveliness of host or router.
+-----------------------------------------
+![Markdown Logo](https://www.researchgate.net/profile/Elias-Bou-Harb/publication/264937650/figure/fig11/AS:668298781945881@1536346254777/The-ICMP-Timestamp-scan-targeting-a-non-active-14a-and-an-active-host-14b.ppm)
+#### > Timestamp request and Timestamp reply: To find the round trip time between two devices to check whether the clocks are synchronized between the devices
+-----------------------------------------------------------
