@@ -50,7 +50,7 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 
       * Type : Contains the message type. (8 bits). It gives Information of the Message (For Example: Type 3 , 11 , 8 ,12 ,etc..)
       ------------------------------------------------------------------------------------------
-      * Code : Contains the sub-type of the ICMP request.(8 bits). Both Type and Code are interpreted together to get useful information (For Example: Type 3  with code               0,2,1,3,4,5).
+      * Code : Contains the sub-type of the ICMP request.(8 bits). Both Type and Code are interpreted together to get useful information (For Example: Type 3  with code  0,2,1,3,4,5).
       ------------------------------------------------------------------------------------------
       * Checksum : It is a 16 bit field to detect error exists in the message or not.
 -----------------------------------------------------------------------------------
