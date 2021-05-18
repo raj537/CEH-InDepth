@@ -96,7 +96,10 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 #### What is PingSweep ?
 ##### PingSweep is a scanning technique in which ICMP echo requests are send to a range of hosts and if the hosts send back echo-reply then those hosts are considered as live.(After gaining live hosts information we can proceed with port scanning).
 ------------------------------------------------------------------
-#### PingSweep via nmap 
+#### PingSweep via nmap (Network Scanning)
 ```bash
   nmap -sP 172.31.1.123
 ```
+##### -sP: tells nmap no to do a port scan after host discovery.So After the Scan Nmap will only provide whether the host is up or down.
+##### Nmap Scan Result
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/nmapPinSweep.png)
