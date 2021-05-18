@@ -85,3 +85,8 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 ![Markdown Logo](https://www.researchgate.net/profile/Elias-Bou-Harb/publication/264937650/figure/fig11/AS:668298781945881@1536346254777/The-ICMP-Timestamp-scan-targeting-a-non-active-14a-and-an-active-host-14b.ppm)
 #### > Timestamp request and Timestamp reply: To find the round trip time between two devices to check whether the clocks are synchronized between the devices
 -----------------------------------------------------------
+#### Wireshark Captures Of Query Messages.
+------------------------------------------------
+#### Echo Request and Echo Reply(Type 8 code 0)
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/ICMPEcho.png)
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/ICMPReply.png)
