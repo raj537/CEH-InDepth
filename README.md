@@ -130,8 +130,9 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 ##### First Lets some Important Headers of TCP that are used in the (All the headers are important but we will take only 5 headers for now , we will understand rest of the headers later) :
        > Source Port : Determines the source port from where the source is trying to connect to the server.
        > Destination Port : Determines the destination port where the source port is trying to connect.
-       > Sequence Number: The sequence number is the byte number of the first byte of data in the TCP packet sent (also called a TCP segment),beginning at a randomly chosen initial sequence number (ISN) .The SYN packet one sequence number so the original data starts at ISN + 1.
+       > Sequence Number: The sequence number is the byte number of the first byte of data in the TCP packet sent (also called a TCP segment),beginning at a randomly chosen initial sequence number (ISN) .The SYN packet consume one sequence number so the original data starts at ISN + 1.
        > Acknowledgement number : Acknowledgement number is the sequence number of the next byte that the receiver is expecting to receive.
  ------------------------------------------------------------
- #### Now Lets UnderStand the Three Phases in-depth
+#### Now Lets UnderStand the Three Phases in-depth
  ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/TCP-Three-Way-Handshake-In-Depth.png)
+##### Connection Phase : In this phase the client sends first packet with SYN flag and with a intial sequence number X (in our case the  sequence number is 100).The other machine i.e server generates its own sequence number Y(in this case 300) and ACK number as X+1 and finally the SYN and ACK flags , then sends the packet to the client. The client then generates its sequence number based on the acknowledgement  number of server i.e X1 = Y and generates the acknowledgement number on the basis of sequence number of server i.e ACK = (X+1)+1 and sets the RST and ACK flag or only RST flag and then sends the packet to close the connection(Resetting the port).
