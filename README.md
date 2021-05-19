@@ -117,3 +117,7 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 #### Understanding TCP Scans
 ##### For that let's have a look on how TCP works ... AKA TCP three-way Handshake
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/TCPthreewayhandshake.png)
+##### So Lets Begin with the flow..
+###### > Client sends a SYN request(For Synchronizing with the server) to a specified  port that it wants to connect with.
+###### > Server responds with a SYN + ACK (Acknowledging the client's packet) for the previous request that the client had send.
+###### > The Client then responds with RST + ACK(Acknowledging the server's packet) for the packet that the server had sent.
