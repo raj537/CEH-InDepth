@@ -56,13 +56,13 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 -----------------------------------------------------------------------------------
 #### UNDERSTANDING TYPES OF MESSAGES AND CODES
 #### Error Reporting Messages
-![Markdown Logo](https://study-ccna.com/wp-content/uploads/2016/03/how_icmp_works.jpg)
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/ICMPHostUnreach.jpg)
 #### > Destination Unreachable: Datagram has not reached its final destination.
 ------------------------------------------------------------------------
 ![Markdown Logo](https://media.geeksforgeeks.org/wp-content/uploads/1-73.png)
 #### > Source Quench: Network has encountered congestion and the datagram has been dropped.
 -------------------------------------------------------------------
-![Markdown Logo](https://lh3.googleusercontent.com/proxy/6TwoxuT6ORLCzjsjHWKtlZYp2ncQU-wWFXfSpHihsI11r6Ry4DDoeenK_ydUWqyaNiye8IqhtlJotxe88kWUzhNK_pGgiUfqxV1D5EvFLsEdmud_uOHj)
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/download.png)
 #### > Redirection Messages: Notifies the source that its using a wrong router to send its message.
 ------------------------------------------------------------------------
 #### > Parameter Problem: either there is a problem with header or some options are illegal.
