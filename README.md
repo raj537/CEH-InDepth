@@ -112,4 +112,8 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 ```
 #### If you want to take a look on scapy and its functions and features do check this --> [Scapy Documentation ](https://scapy.readthedocs.io/en/latest/)
 #### COMPLETE TOOL IMPLEMENTATION ---> [PingSweep.py](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/PingSweep.py) Play with it to understand it more practically
-
+--------------------------------------
+#### CHECKING FOR OPEN PORTS
+#### Understanding TCP Scans
+##### For that let's have a look on how TCP works ... AKA TCP three-way Handshake
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/TCPthreewayhandshake.png)
