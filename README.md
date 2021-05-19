@@ -118,10 +118,20 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 ##### For that let's have a look on how TCP works ... AKA TCP three-way Handshake
 -----------------------------------------------
 ##### WHAT IS TCP?
-##### Transmission Control Protocol or TCP is a protocol used for connnection-based communication.That means it gurantees that all the packets from the client will reach the destination and vice-versa.
+##### Transmission Control Protocol or TCP is a protocol in layer 4 of TCP/IP Stack , used for connnection-based communication.That means it gurantees that all the packets from the client will reach the destination and vice-versa. It contains the information like source-port and destination-port.
 --------------------------------------------
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/TCPthreewayhandshake.png)
 ##### So Lets Begin with the flow..
 ##### > Client sends a SYN request(For Synchronizing with the server) to a specified  port that it wants to connect with.
 ##### > Server responds with a SYN + ACK (Acknowledging the client's packet) for the previous request that the client had send.
 ##### > The Client then responds with RST + ACK(Acknowledging the server's packet) for the packet that the server had sent.
+-----------------------------------------------------------
+#### The above explanation was an abstract view of TCP connection . Now let's go a little deep into TCP..
+##### First Lets some Important Headers of TCP that are used in the (All the headers are important but we will take only 5 headers for now , we will understand rest of the headers later) :
+       > Source Port : Determines the source port from where the source is trying to connect to the server.
+       > Destination Port : Determines the destination port where the source port is trying to connect.
+       > Sequence Number: The sequence number is the byte number of the first byte of data in the TCP packet sent (also called a TCP segment),beginning at a randomly chosen initial sequence number (ISN) .The SYN packet one sequence number so the original data starts at ISN + 1.
+       > Acknowledgement number : Acknowledgement number is the sequence number of the next byte that the receiver is expecting to receive.
+ ------------------------------------------------------------
+ #### Now Lets UnderStand the Three Phases in-depth
+ ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/TCP-Three-Way-Handshake-In-Depth.png)
