@@ -118,10 +118,10 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 ##### For that let's have a look on how TCP works ... AKA TCP three-way Handshake
 -----------------------------------------------
 ##### WHAT IS TCP?
-###### Transmission Control Protocol or TCP is a protocol used for connnection-based communication.That means it gurantees that all the packets from the client will reach the destination and vice-versa.
+##### Transmission Control Protocol or TCP is a protocol used for connnection-based communication.That means it gurantees that all the packets from the client will reach the destination and vice-versa.
 --------------------------------------------
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/TCPthreewayhandshake.png)
 ##### So Lets Begin with the flow..
-###### > Client sends a SYN request(For Synchronizing with the server) to a specified  port that it wants to connect with.
-###### > Server responds with a SYN + ACK (Acknowledging the client's packet) for the previous request that the client had send.
-###### > The Client then responds with RST + ACK(Acknowledging the server's packet) for the packet that the server had sent.
+##### > Client sends a SYN request(For Synchronizing with the server) to a specified  port that it wants to connect with.
+##### > Server responds with a SYN + ACK (Acknowledging the client's packet) for the previous request that the client had send.
+##### > The Client then responds with RST + ACK(Acknowledging the server's packet) for the packet that the server had sent.
