@@ -175,7 +175,12 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 ```python
 scapy.sr1(scapy.IP(dst="192.168.1.102")/scapy.TCP(dport=80,flags="S"),timeout=5)
 ```
+-----------------------------------------------
 #### TCP-SYN Scan or Half-Open Connection Scan.
 ##### In this scan :
       1) Client sends a SYN + PORT request to the sever.
-      1) If the port is Open 
+      2) If the port is Open the server sends a SYN + ACK packet , if closed then RST if filtered(firewall protected) then no response or ICMP error with Type 3 code  [1,2,3,9,10,13]
+      3) If SYN + ACK is received then a packet with RST flag is sent instead of RST + ACK.
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/Ereet_Packet_Trace_Syn_Open.png)
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/Ereet_Packet_Trace_Syn_Closed.png)
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/Ereet_Packet_Trace_Syn_Closed.png)
