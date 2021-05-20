@@ -167,6 +167,8 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
        > F - Used for Finishing the connection . This is sent when there is no more data to be sent between the client and server or vice-versa.
        > U - This is sent for notifying the receiver to  process the the packet before processing all other packets . The sender is notified when all the urgent data has been received.
        > P - This is similar like U flag and tells the receiver to process these packets as they are received instead of buffering them.
+       > SA - SYN + ACK used by the client or server for acknowledging a SYN packet.
+ ##### For more information on TCP flags [https://www.keycdn.com/support/tcp-flags#:~:text=TCP%20flags%20are%20used%20within,a%20particular%20connection%20is%20handled.](https://www.keycdn.com/support/tcp-flags#:~:text=TCP%20flags%20are%20used%20within,a%20particular%20connection%20is%20handled.)
  ----------------------------------------------------
 #### Now , Lets get straight into TCP Scans.
 ##### First and the most basic scan is just establishing a TCP connection and resetting with a ACK flag set .
@@ -185,3 +187,17 @@ scapy.sr1(scapy.IP(dst="192.168.1.102")/scapy.TCP(dport=80,flags="S"),timeout=5)
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/Ereet_Packet_Trace_Syn_Closed.png)
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/Ereet_Packet_Trace_Syn_Closed.png)
 ------------------------------------------------
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/TCPSYNScanScapy.png)
+#### In the above image you can see that TCP-SYN Scan is by default implemented in sr method of scapy module and so in sr1 method .
+#### But for the sake of Understanding I have implemented a Tool. [TCP-SYNScanTool](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/TCP-SYNScan.py)
+#### Snippet of the code that might seem confusing .
+```python
+elif resp.haslayer(TCP):
+          if resp.getlayer(TCP).flags == 0x14:
+             print(colored("[+]Port {} is closed".format(port),'red',attrs=['concealed']))
+          elif resp.getlayer(TCP).flags == 0x12:
+             #sending the final packet with RST flag without ACK flag set
+             sr(IP(dst=dst_ip)/TCP(sport=port,dport=port,flags="R"),timeout=10)
+             print(colored("[+]Port {} is open".format(port),'green',attrs=['concealed']))
+```
+#### Earlier we have discussed about the various flags like S,R,SA
