@@ -5,7 +5,10 @@ from termcolor import colored
 
 
 def scan(dst_ip,port):
-    resp = sr1(IP(dst=dst_ip)/TCP(dport=port,flags="F"),timeout=10)
+    try:
+       resp = sr1(IP(dst=dst_ip)/TCP(dport=port,flags="F"),timeout=10)
+    except:
+       print(colored("Port {} is Unknown".format(port),"purple",attrs=['concealed'])) 
     if(str(resp) == "<type 'None'>"):
        print(colored("[+]Port {} is open|filtered".format(port),"green",attrs=['concealed']))
     elif(resp.haslayer(TCP)):
