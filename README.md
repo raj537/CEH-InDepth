@@ -24,7 +24,7 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
        5) Vulnerability Scanning
        6) Draw Network Diagrams of Vulnerable Hosts
        7) Prepare Proxies
-       8) Attack
+       8) Attack  
 --------------------------------------------------------------------------
 #### For Now We Will Be Focusing on The First Two
        1) Check for Live Systems <---
@@ -154,3 +154,20 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
  ##### A more complex example is visting youtube lets check it out.
  ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/TCPThreeWayYoutube.png)
  ------------------------------------------------------
+ #### CAN WE CONNECT FROM PORT 21 TO PORT 80 ?
+ ##### Well the answer is no , its because there are specific ports that has a specific service registered for it . Port 21 runs ftp service where port 80 runs http .These ports can exchange data with each other . So now another question arises that how operating system chooses a source port ?. There are  short period communication ports called Epehmeral ports , these ports are used for dynamic port generation and our Operating System chooses a random port fro this range . The Internet Assigned Numbers Authority (IANA) suggests the range 49152–65535 (2^15 + 2^14 to 2^16 − 1) for dynamic or private ports. Every Operating has a specifc range of Ephemeral ports.
+       > Linux Kernel :  32768–60999
+       >  Windows XP :  1025–5000
+       >  Windows Server 2003 : 1025–5000
+-----------------------------------------------------
+#### So lets discuss some flags of TCP .(Scapy's TCP flags)
+       > R - Used for Resetting a connection . This is sent when sender receives what its not expecting thus resetting the connection.
+       > S - Used for Synchronization . This is sent by the client for the first time for synchronizing with the server .
+       > A - Used for Acknowleging a packet. This is sent by the client or server for acknowledging a packet . Its sometimes combined with other flags  like S or R ,etc,..
+       > F - Used for Finishing the connection . This is sent when there is no more data to be sent between the client and server or vice-versa.
+       > U - This is sent for notifying the receiver to  process the the packet before processing all other packets . The sender is notified when all the urgent data has been received.
+       > P - This is similar like U flag and tells the receiver to process these packets as they are received instead of buffering them.
+ ----------------------------------------------------
+#### Now , Lets get straight into TCP Scans.
+##### First and the most basic scan is just establishing a TCP connection and resetting with a ACK flag set .
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/TCPScan.png)
