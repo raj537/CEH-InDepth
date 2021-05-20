@@ -171,3 +171,11 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 #### Now , Lets get straight into TCP Scans.
 ##### First and the most basic scan is just establishing a TCP connection and resetting with a ACK flag set .
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/TCPScan.png)
+###### Python One liner
+```python
+scapy.sr1(scapy.IP(dst="192.168.1.102")/scapy.TCP(dport=80,flags="S"),timeout=5)
+```
+#### TCP-SYN Scan or Half-Open Connection Scan.
+##### In this scan :
+      1) Client sends a SYN + PORT request to the sever.
+      1) If the port is Open 
