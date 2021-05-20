@@ -10,9 +10,9 @@ def scan_ports(dst_ip,portLimit=100):
           print(colored("[+]Port {} is filtered\n".format(port),'white',attrs=['concealed']))
        #checking for closed port and open port
        elif resp.haslayer(TCP):
-          if resp.getlayer(TCP).flags == 0x14:
+          if resp.getlayer(TCP).flags == 0x14: # RST or R = 0x14
              print(colored("[+]Port {} is closed".format(port),'red',attrs=['concealed']))
-          elif resp.getlayer(TCP).flags == 0x12:
+          elif resp.getlayer(TCP).flags == 0x12: # SYN + ACK or SA = 0x12
              #sending the final packet with RST flag without ACK flag set
              sr(IP(dst=dst_ip)/TCP(sport=port,dport=port,flags="R"),timeout=10)
              print(colored("[+]Port {} is open".format(port),'green',attrs=['concealed']))
