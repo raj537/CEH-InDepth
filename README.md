@@ -259,4 +259,13 @@ nmap -sS 192.168.1.102
 ##### Then you can set the THREADS or you can leave it to its default state (increasing threads increases the performance for /24 CIDR its recommended to set THREADS to values like 5,10 etc .. or else the preformance might slow down) then run ..It will do  its scan and will notify you once it finds hosts with incremental ip id.
 -------------------------------------------------------------------
 #### Now Lets discuss how IDLE scan is performed.
+##### The "zombie" means the host with incremental ip id.
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/idle-scan-open.png)
+##### In Case of Open Port.
+-------------------------------------------------------------
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/idle-scan-closed.png)
+##### In Case of Closed Port.
+------------------------------------------------------------
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/idle-scan-filtered.png)
+##### In Case of Filtered Port
+
