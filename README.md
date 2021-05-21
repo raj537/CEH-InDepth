@@ -177,6 +177,10 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
 ```python
 scapy.sr1(scapy.IP(dst="192.168.1.102")/scapy.TCP(dport=80,flags="S"),timeout=5)
 ```
+###### Nmap Command
+```bash 
+nmap 192.168.1.102
+```
 -----------------------------------------------
 #### TCP-SYN Scan or Half-Open Connection Scan.
 ##### In this scan :
@@ -189,11 +193,16 @@ scapy.sr1(scapy.IP(dst="192.168.1.102")/scapy.TCP(dport=80,flags="S"),timeout=5)
 ------------------------------------------------
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/TCPSYNScanScapy.png)
 #### In the above image you can see that TCP-SYN Scan is by default implemented in sr method of scapy module and so in sr1 method .
-#### But for the sake of Understanding I have implemented a Tool. [TCP-SYNScanTool](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/TCP-SYNScan.py)
+#### But for the sake of Understanding I have implemented a Tool. [https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/TCP-SYNScan.py](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/TCP-SYNScan.py)
 ---------------------------------------------------
+##### Nmap Command
+```bash
+nmap -sS 192.168.1.102
+```
 #### Why this scan is used ?
 ##### It can bypass some old firewalls , as no real connection is made the firewall does not block the connection . But widely deployed firewalls and even private firewalls can detect this scan .. So , its not very efficient for bypassing firewalls.
 ---------------------------------------------------------
+
 #### FIN Scan 
 #### In this scan initial packet is sent by adding FIN flag with the specific port ,rather than setting the SYN flag.
      > If no response is  sent : Port is Open|Filtered.
@@ -203,4 +212,11 @@ scapy.sr1(scapy.IP(dst="192.168.1.102")/scapy.TCP(dport=80,flags="S"),timeout=5)
 ##### In the above scan I have demonstrated the scan on my loopback address. The reason is that many machines send RST flag on every packet as its not regarded a valid packet for those machines. This is the major drawback of this Scan .This Scan Only works on Linux Machines , but a major advantage of this Scan is it can bypass the SYN , ACK rule of some firewalls .We will learn about this rule after this topic is over.
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/FINScanWireShark.png)
 ##### Its the wireshark capture of the scan . As you can see in case of port 80 , no response was sent and thus nmap had taken it as "open|filtered". But why "Open|Filtered" is it Open or Filtered( protected by some firewall ).Well there can be cases in which the host is protected by some firewall , in those cases the firewall might be configured with SYN-ACK rule , port blocking rule ,etc ,.. this scan can bypass the SYN-ACK rule  in that case nmap will take it as "Open|Filtered" as  even it is open or filtered the host  will send no response but this scan cannot bypass port blocking rule and will get and icmp error .
-
+---------------------------------------------------------------
+#### Scans Similar to FIN Scan : Null Scan , XMAS Scan .
+##### Both the Scans Null Scan and XMAS Scan are similar to FIN  as  these both scan will get same response like FIN that means:
+      > If no response is  sent : Port is Open|Filtered.
+      > If RST flag is sent : Port is Closed.
+      > If ICMP Error Type 3 with code 1,2,3,9,10,13 is sent : Port is Filtered.
+##### The only difference is that how the initial packet in constructed . 
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/FinXmasNullDif.png)
