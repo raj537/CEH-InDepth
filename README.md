@@ -199,7 +199,7 @@ scapy.sr1(scapy.IP(dst="192.168.1.102")/scapy.TCP(dport=80,flags="S"),timeout=5)
      > If no response is  sent : Port is Open|Filtered.
      > If RST flag is sent : Port is Closed.
      > If ICMP Error Type 3 with code 1,2,3,9,10,13 is sent : Port is Filtered.
-![Markdown Logo](https://https://github.com/raj537/CEH-InDepth/blob/master/screenshots/FINScan.png)
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/FINScan.png)
 #### In the above scan I have demonstrated the scan on my loopback address. The reason is that many machines send RST flag on every packet as its not regarded a valid packet for those machines. This is the major drawback of this Scan .This Scan Only works on Linux Machines , but a major advantage of this Scan is it can bypass the SYN , ACK rule of some firewalls .We will learn about this rule after this topic is over.
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/FINScanWireShark.png)
 #### Its the wireshark capture of the scan . As you can see in case of port 80 , no response was sent and thus nmap had taken it as "open|filtered". But why "Open|Filtered" is it Open or Filtered( protected by some firewall ).Well there can be cases in which the host is protected by some firewall , in those cases the firewall might be configured with SYN-ACK rule , port blocking rule ,etc ,.. this scan can bypass the SYN-ACK rule  in that case nmap will take it as "Open|Filtered" as  even it is open or filtered the host  will send no response but this scan cannot bypass port blocking rule and will get and icmp error .
