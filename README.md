@@ -110,8 +110,8 @@ This  Project is an initiative for  bringing the CEH concepts in a easy and in-d
    from scapy.all import *
    a = srloop(IP(dst="192.168.1.0/24")/ICMP(),timeout=5)
 ```
-#### If you want to take a look on scapy and its functions and features do check this --> [Scapy Documentation ](https://scapy.readthedocs.io/en/latest/)
-#### COMPLETE TOOL IMPLEMENTATION ---> [PingSweep.py](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/PingSweep.py) Play with it to understand it more practically
+#### If you want to take a look on scapy and its functions and features do check this --> [https://scapy.readthedocs.io/en/latest/ ](https://scapy.readthedocs.io/en/latest/)
+#### COMPLETE TOOL IMPLEMENTATION ---> [https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/PingSweep.py](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/PingSweep.py) Play with it to understand it more practically
 --------------------------------------
 #### CHECKING FOR OPEN PORTS
 #### Understanding TCP Scans
@@ -220,3 +220,41 @@ nmap -sS 192.168.1.102
       > If ICMP Error Type 3 with code 1,2,3,9,10,13 is sent : Port is Filtered.
 ##### The only difference is that how the initial packet in constructed . 
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/FinXmasNullDif.png)
+------------------------------------------------------
+### Now Lets see How These Scans Bypass Firewalls .
+#### Some Basics of FireWall
+#####  A firewall is essentially the barrier that sits between a private internal network and the public Internet.
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/firewall-1.png)
+-----------------------------------------------------------
+#### Types of Firewalls
+    1) Packet filtering : A small amount of data is analyzed and distributed according to the filter’s standards.
+    2) Proxy service : Network security system that protects while filtering messages at the application layer.
+    3) Stateful inspection: Dynamic packet filtering that monitors active connections to determine which network packets to allow through the Firewall.
+    4) Next Generation Firewall (NGFW) : Deep packet inspection Firewall with application-level inspection.
+----------------------------------------------------------
+#### FireWall Topic Will be Discussed 
+--------------------------------------------
+#### IDLE SCAN : BYPASSING FIREWALLS BY SPOOFING
+##### Before Discussing IDLE SCAN lets discuss some prerequisites.
+-----------------------------------
+#### Understanding IP ID .
+##### IP ID is unique number that identifies fragments of an original IP datagram. If this defintion confuses you , then you can think it as a number that a source generates and adds it to its packet when communicating with the host.This number increments  when it receives SYN + ACK from the destination, and it does not increment if RST or no response is sent by the destination server.
+##### Main Types are:
+      > Incremental IP ID : Increments by 1 at every response
+      > Random IP ID : Increments randomly at every response
+      > All Zeroes : Never Increments on response
+--------------------------------------------
+#### How Hackers Take Advantage of This IP ID?
+##### Hackers scan the network and takes the host with incremental IP ID and Then spoof their ip address to scan the host.
+-----------------------------------------------
+#### How A Hacker can Identify the IP ID of a host?
+##### Well for that the hacker need to craft six packets and send it the host and check every time its IP ID. 
+##### Small Demonstration.
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/IPIDIncremental.png)
+##### In The above image that the  ip id of the host was incrementing by one , thus its an incremental ip id host . I have used only 5 packets but 6 packets should be used its better for confirmation. 
+##### But you dont need to do it  manually you can either use metasploit's ipidseq module in auxillary/scanner/ip/ipidseq  or using some custom python script.
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/networkScanningIPIDmetasploit.png)
+##### First You need to set the RHOSTS to your target's CIDR .
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/networkScanningIPIDmetasploit2scanning.png)
+##### Then you can set the THREADS or you can leave it to its default state (increasing threads increases the performance for /24 CIDR its recommended to set THREADS to values like 5,10 etc .. or else the preformance might slow down) then run ..It will do  its scan and will notify you once it finds hosts with incremental ip id.
+-------------------------------------------------------------------
