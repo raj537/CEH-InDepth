@@ -199,6 +199,7 @@ nmap 192.168.1.102
 ```bash
 nmap -sS 192.168.1.102
 ```
+------------------------------------------------------------
 #### Why this scan is used ?
 ##### It can bypass some old firewalls , as no real connection is made the firewall does not block the connection . But widely deployed firewalls and even private firewalls can detect this scan .. So , its not very efficient for bypassing firewalls.
 ---------------------------------------------------------
@@ -213,6 +214,11 @@ nmap -sS 192.168.1.102
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/FINScanWireShark.png)
 ##### Its the wireshark capture of the scan . As you can see in case of port 80 , no response was sent and thus nmap had taken it as "open|filtered". But why "Open|Filtered" is it Open or Filtered( protected by some firewall ).Well there can be cases in which the host is protected by some firewall , in those cases the firewall might be configured with SYN-ACK rule , port blocking rule ,etc ,.. this scan can bypass the SYN-ACK rule  in that case nmap will take it as "Open|Filtered" as  even it is open or filtered the host  will send no response but this scan cannot bypass port blocking rule and will get and icmp error .
 ---------------------------------------------------------------
+##### Nmap Command
+```bash
+nmap -sF 192.168.1.102
+```
+--------------------------------------------------
 #### Scans Similar to FIN Scan : Null Scan , XMAS Scan .
 ##### Both the Scans Null Scan and XMAS Scan are similar to FIN  as  these both scan will get same response like FIN that means:
       > If no response is  sent : Port is Open|Filtered.
@@ -220,6 +226,21 @@ nmap -sS 192.168.1.102
       > If ICMP Error Type 3 with code 1,2,3,9,10,13 is sent : Port is Filtered.
 ##### The only difference is that how the initial packet in constructed . 
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/FinXmasNullDif.png)
+------------------------------------------------------
+##### Nmap Command For Null Scan
+```bash
+nmap -sN 192.168.1.102
+```
+-------------------------------------------------------
+##### Nmap Command For XMAS Scan
+```bash
+nmap -sX 192.168.1.102
+```
+--------------------------------------------------------
+#### Python Implementation of FIN , NULL and XMAS Scans
+##### FIN Scan --> [https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/FINScan.py](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/FINScan.py)
+##### XMAS Scan --> [https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/XMAS-Scan.py](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/XMAS-Scan.py)
+##### Null Scan --> [https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/NullScan.py](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/NullScan.py)
 ------------------------------------------------------
 ### Now Lets see How These Scans Bypass Firewalls .
 #### Some Basics of FireWall
@@ -268,4 +289,13 @@ nmap -sS 192.168.1.102
 ------------------------------------------------------------
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/idle-scan-filtered.png)
 ##### In Case of Filtered Port
-
+------------------------------------------------------------------------------------------
+#### Advantage of this Scan  is That we can bypass ip-whitelisting , we can try out the zombie ip we have found against the host to check whether its allowed or not if  allowed then our job is done else try another host.
+----------------------------------------------------------------------------------
+#### Nmap Command
+```bash
+ nmap -Pn -p- -sI kiosk.adobe.com www.riaa.com
+ ```
+ ##### The nmap command should have -Pn attribute to instruct it not send a initial ping request or else attacker's ip address will be revealed.
+ ##### My tool --> [https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/IDLE.py](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/IDLE.py)
+ --------------------------------------------------------------------------------------------------
