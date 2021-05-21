@@ -258,3 +258,5 @@ nmap -sS 192.168.1.102
 ![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/networkScanningIPIDmetasploit2scanning.png)
 ##### Then you can set the THREADS or you can leave it to its default state (increasing threads increases the performance for /24 CIDR its recommended to set THREADS to values like 5,10 etc .. or else the preformance might slow down) then run ..It will do  its scan and will notify you once it finds hosts with incremental ip id.
 -------------------------------------------------------------------
+#### Now Lets discuss how IDLE scan is performed.
+![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/idle-scan-open.png)
