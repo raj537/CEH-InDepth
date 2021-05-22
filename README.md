@@ -292,8 +292,4 @@ nmap -sX 192.168.1.102
 ##### [IDLE SCAN ALGORITHM AND MORE](https://nmap.org/book/idlescan.html)
 ##### [CEH Guide](http://eprints.binadarma.ac.id/1000/1/KEAMANAN%20SISTEM%20INFORMASI%20MATERI%201.pdf)
 -----------------------------------------------------------------------
-### Author
-#### Email: sagnikray544@gmail.com
-#### GitHub: https://github.com/raj537/
-#### Discord: https://discord.com/channels/AngaRaj#2199
----------------------------------------------------------------------------
+
