@@ -241,19 +241,6 @@ nmap -sX 192.168.1.102
 ##### FIN Scan --> [https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/FINScan.py](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/FINScan.py)
 ##### XMAS Scan --> [https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/XMAS-Scan.py](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/XMAS-Scan.py)
 ##### Null Scan --> [https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/NullScan.py](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/NullScan.py)
-------------------------------------------------------
-### Now Lets see How These Scans Bypass Firewalls .
-#### Some Basics of FireWall
-#####  A firewall is essentially the barrier that sits between a private internal network and the public Internet.
-![Markdown Logo](https://github.com/raj537/CEH-InDepth/blob/master/screenshots/firewall-1.png)
------------------------------------------------------------
-#### Types of Firewalls
-    1) Packet filtering : A small amount of data is analyzed and distributed according to the filter’s standards.
-    2) Proxy service : Network security system that protects while filtering messages at the application layer.
-    3) Stateful inspection: Dynamic packet filtering that monitors active connections to determine which network packets to allow through the Firewall.
-    4) Next Generation Firewall (NGFW) : Deep packet inspection Firewall with application-level inspection.
-----------------------------------------------------------
-#### FireWall Topic Will be Discussed 
 --------------------------------------------
 #### IDLE SCAN : BYPASSING FIREWALLS BY SPOOFING
 ##### Before Discussing IDLE SCAN lets discuss some prerequisites.
