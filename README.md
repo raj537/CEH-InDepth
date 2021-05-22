@@ -286,3 +286,14 @@ nmap -sX 192.168.1.102
  ##### The nmap command should have -Pn attribute to instruct it not send a initial ping request or else attacker's ip address will be revealed.
  ##### My tool --> [https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/IDLE.py](https://github.com/raj537/CEH-InDepth/blob/master/NetworkScaning/IDLE.py)
  --------------------------------------------------------------------------------------------------
+#### Useful Links:
+##### [https://nmap.org/](https://nmap.org/)
+##### [How Firewalls Works?](https://www.bu.edu/tech/about/security-resources/host-based/intro/#:~:text=The%20server's%20first%20response%20will,a%20SYN%2DACK%20packet).&text=Knowing%20how%20the%20protocol%20works,SYN%20packet%20and%20reject%20it.)
+##### [IDLE SCAN ALGORITHM AND MORE](https://nmap.org/book/idlescan.html)
+##### [CEH Guide](http://eprints.binadarma.ac.id/1000/1/KEAMANAN%20SISTEM%20INFORMASI%20MATERI%201.pdf)
+-----------------------------------------------------------------------
+### Author
+#### Email: sagnikray544@gmail.com
+#### GitHub: https://github.com/raj537/
+#### Discord: https://discord.com/channels/AngaRaj#2199
+---------------------------------------------------------------------------
