@@ -201,7 +201,7 @@ nmap -sS 192.168.1.102
 ```
 ------------------------------------------------------------
 #### Why this scan is used ?
-##### It can bypass some old firewalls , as no real connection is made the firewall does not block the connection . But widely deployed firewalls and even private firewalls can detect this scan .. So , its not very efficient for bypassing firewalls.
+##### It can bypass some old firewalls , as no real connection is made the firewall does not block the connection . But widely deployed firewalls and even private firewalls can detect this scan .. So , its not very efficient for bypassing firewalls.Another advantage is that attacker ip is not logged in the server as no real connection is made.
 ---------------------------------------------------------
 
 #### FIN Scan 
